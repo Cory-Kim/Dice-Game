@@ -1,0 +1,331 @@
+/* hide scrollbar but allow scrolling */
+body {
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  /* for Chrome, Safari, and Opera */
+}
+
+@font-face {
+  src: url(../fonts/IndieFlower-Regular.ttf);
+  font-family: indie;
+}
+@font-face {
+  src: url(../fonts/ALBAS.ttf);
+  font-family: albas;
+}
+body {
+  color: white;
+  background-image: url(../images/black.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+#container {
+  height: 100vh;
+  font-family: indie;
+  text-align: center;
+  font-weight: bold;
+  display: grid;
+  justify-items: center;
+  grid-row-gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 9fr 1fr;
+  grid-template-areas: "title title" "player opponent" "button button";
+}
+
+#title {
+  font-family: albas;
+  grid-area: title;
+  font-size: xx-large;
+}
+
+#playerBox {
+  background-color: white;
+  width: 90%;
+  grid-area: player;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "dice" "score";
+  border: 1px solid white;
+  border-radius: 20px;
+  box-shadow: 6px 6px 6px black;
+}
+
+#pDice {
+  color: black;
+  grid-area: dice;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
+  grid-template-areas: "yourDice yourDice" "pDice1 pDice2";
+}
+
+#yourDice {
+  font-size: xx-large;
+  grid-area: yourDice;
+  border-bottom: 1px solid black;
+}
+
+#pDice1 {
+  font-size: x-large;
+  grid-area: pDice1;
+  border-right: 1px solid black;
+  border-bottom: 2px solid rgb(212, 97, 97);
+}
+
+#pDice2 {
+  font-size: x-large;
+  grid-area: pDice2;
+  border-bottom: 2px solid rgb(212, 97, 97);
+}
+
+#pScore {
+  grid-area: score;
+  background-color: black;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
+  grid-template-areas: "subtitle subtitle" "roundScore totalScore";
+}
+
+#pSubtitle {
+  font-size: xx-large;
+  grid-area: subtitle;
+  border-bottom: 1px solid white;
+}
+
+#pRoundScore {
+  font-size: x-large;
+  grid-area: roundScore;
+  border-right: 1px solid white;
+}
+
+#pTotalScore {
+  font-size: x-large;
+  grid-area: totalScore;
+}
+
+#opponentBox {
+  background-color: white;
+  width: 90%;
+  grid-area: opponent;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "dice2" "score2";
+  border: 1px solid white;
+  border-radius: 20px;
+  box-shadow: 6px 6px 6px black;
+}
+
+#oDice {
+  color: black;
+  grid-area: dice2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
+  grid-template-areas: "xDice xDice" "oDice1 oDice2";
+}
+
+#xDice {
+  font-size: xx-large;
+  color: rgb(215, 62, 62);
+  grid-area: xDice;
+  border-bottom: 1px solid black;
+}
+
+#oDice1 {
+  font-size: x-large;
+  color: rgb(215, 62, 62);
+  grid-area: oDice1;
+  border-right: 1px solid black;
+  border-bottom: 2px solid rgb(212, 97, 97);
+}
+
+#oDice2 {
+  font-size: x-large;
+  color: rgb(215, 62, 62);
+  grid-area: oDice2;
+  border-bottom: 2px solid rgb(212, 97, 97);
+}
+
+#oSubtitle {
+  font-size: xx-large;
+  grid-area: subtitle2;
+  border-bottom: 1px solid white;
+}
+
+#oRoundScore {
+  font-size: x-large;
+  grid-area: roundScore2;
+  border-right: 1px solid white;
+}
+
+#oTotalScore {
+  font-size: x-large;
+  grid-area: totalScore2;
+}
+
+#oScore {
+  grid-area: score2;
+  background-color: black;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
+  grid-template-areas: "subtitle2 subtitle2" "roundScore2 totalScore2";
+}
+
+.score {
+  font-size: xx-large;
+}
+
+#buttons {
+  grid-area: button;
+}
+
+.rotateButton {
+  background: white;
+  color: rgb(10, 10, 10);
+  padding: 6px 12px;
+  border: 1px solid white;
+  border-radius: 20px;
+  box-shadow: 5px 9px 5px rgb(26, 26, 27);
+  text-shadow: none;
+}
+
+.rotateButton:hover {
+  background-color: black;
+  color: white;
+}
+
+.rotateButton:active {
+  background-color: #2d2e2f;
+  box-shadow: 5px 5px 5px black;
+  transform: translateY(4px);
+}
+
+.shake {
+  -webkit-animation: shake 0.5s infinite;
+          animation: shake 0.5s infinite;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    transform: rotate 8deg;
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate 8deg;
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
+}
+.popup {
+  margin-top: 10%;
+  margin-left: 40%;
+  font-size: medium;
+  position: absolute;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#xbutton {
+  background-color: #eee;
+  position: absolute;
+  color: rgb(7, 7, 7);
+  text-align: center;
+  height: 25px;
+  width: 17px;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 33vw;
+  height: 10vh;
+  background-color: #606265;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 30%;
+  margin-left: -80px;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 2s;
+  animation: fadeIn 2s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 550px) {
+  #container {
+    height: 100vh;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    display: grid;
+    grid-row-gap: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr 5fr 1fr;
+    grid-template-areas: "title" "player" "opponent" "button";
+  }
+
+  .popup {
+    margin-top: 100%;
+  }
+
+  .popup .popuptext {
+    margin-top: 100px;
+    width: 60vw;
+    height: 10vh;
+  }
+}/*# sourceMappingURL=styles.css.map */

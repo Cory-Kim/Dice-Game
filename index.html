@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="./styles/styles.css" rel="stylesheet">
+	<script src="./scripts/jquery-3.6.0.min.js" defer></script>
+  <script src="./scripts/project.js" defer></script>
+
+  <title>Final Project</title>
+</head>
+
+<body>
+
+	<div class="popup">
+		<div class="popuptext" id="myPopup"></div>
+		<button class="popuptext" id="xbutton" type="button">X</button>
+	</div>
+	
+	<div id="container">
+    <div id="title">Dice Game</div>
+
+    <div id="playerBox">
+			<div id="pDice">
+				<div id="yourDice">Your Dice</div>
+				<div id="pDice1">Dice #1</div>
+				<div id="pDice2">Dice #2</div>
+			</div>
+			<div id="pScore">
+				<div id="pSubtitle">Your Score</div>
+				<div id="pRoundScore"></div>
+				<div id="pTotalScore"></div>
+			</div>
+		</div>
+
+		<div id="opponentBox">
+			<div id="oDice">
+				<div id="xDice">Opponent's Dice</div>
+				<div id="oDice1">Dice #1</div>
+				<div id="oDice2">Dice #2</div>
+			</div>
+			<div id="oScore">
+				<div id="oSubtitle">Opponent's Score</div>
+				<div id="oRoundScore"></div>
+				<div id="oTotalScore"></div>
+			</div>
+		</div>
+		<div id="buttons">
+			<button id="newGame" class="rotateButton" type="button"> New Game </button>
+			<button id="rollDice" class="rotateButton" type="button"> Roll Dice </button>
+		</div>
+  </div>
+</body>
+
+</html>
